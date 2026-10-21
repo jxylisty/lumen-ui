@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumen UI — 组件预览</title>
+<script src="src/theme.js"></script>
+<link rel="stylesheet" href="src/lumen-tokens.css">
+<link rel="stylesheet" href="src/lumen.css">
+<style>
+  body { padding: 32px; max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 26px; margin-bottom: 6px; }
+  h2 { font-size: 16px; margin: 36px 0 14px; color: var(--text-sub); font-weight: 600;
+       padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .demo-card { background: var(--card-solid); border: 1px solid var(--border);
+               border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); }
+  .topbar-demo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="topbar-demo">
+  <div>
+    <h1>Lumen UI</h1>
+    <p class="muted" style="font-size:13px">双主题设计系统 · 零依赖 · 纯 CSS 变量驱动</p>
+  </div>
+  <button class="btn" onclick="lumenToggleTheme(); this.innerHTML = lumenTheme()==='dark' ? LumenIcons.sun : LumenIcons.moon">
+    <i data-ic="moon"></i>
+  </button>
+</div>
+
+<h2>按钮</h2>
+<div class="row">
+  <button class="btn">默认</button>
+  <button class="btn primary"><i data-ic="zap"></i> 主要</button>
+  <button class="btn danger"><i data-ic="x"></i> 危险</button>
+  <button class="btn small">小号</button>
+  <button class="btn" disabled>禁用</button>
+  <button class="btn primary is-loading"><i data-ic="refresh"></i> 加载中</button>
+</div>
+
+<h2>输入</h2>
+<div class="row">
+  <input class="input" placeholder="单行输入" style="width:220px">
+  <select class="select"><option>下拉选项</option></select>
+  <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+</div>
+
+<h2>标签与徽章</h2>
+<div class="row">
+  <span class="tag">默认</span>
+  <span class="tag ok">成功</span>
+  <span class="tag warn">警告</span>
+  <span class="tag danger">危险</span>
+  <span class="tag purple">紫色</span>
+  <span class="tag blue">蓝色</span>
+</div>
+<div class="row">
+  <span class="badge a1">accent-1</span>
+  <span class="badge a2">accent-2</span>
+  <span class="badge a3">accent-3</span>
+  <span class="badge a4">accent-4</span>
+  <span class="badge a5">accent-5</span>
+  <span class="badge a6">accent-6</span>
+</div>
+
+<h2>状态药丸</h2>
+<div class="row">
+  <span class="status-pill ok">在线</span>
+  <span class="status-pill warn">限流</span>
+  <span class="status-pill error">故障</span>
+</div>
+
+<h2>卡片</h2>
+<div class="demo-card">
+  <p style="font-weight:600;margin-bottom:6px">示例卡片</p>
+  <p class="muted" style="font-size:13px">卡片使用 <code>var(--card-solid)</code> 与 <code>var(--shadow-sm)</code>，
+     深浅主题自动适配。</p>
+  <p class="hint"><i data-ic="info"></i> 提示文案使用 <code>.hint</code> 类。</p>
+  <div class="risk-tip"><i data-ic="alert"></i> 这是一条风险提示（<code>.risk-tip</code>）。</div>
+</div>
+
+<h2>代码块与表单容器</h2>
+<div class="code-block">npm install lumen-ui</div>
+<div class="form-card" style="margin-top:12px">.form-card 用于表单分组</div>
+
+<h2>弹层</h2>
+<div class="row">
+  <button class="btn primary" onclick="document.getElementById('m').classList.remove('hidden')">打开模态框</button>
+</div>
+<div class="overlay hidden" id="m" onclick="if(event.target===this)this.classList.add('hidden')">
+  <div class="modal">
+    <div class="modal-esc-hint">ESC</div>
+    <p style="font-weight:600;margin-bottom:8px">模态框标题</p>
+    <p class="muted" style="font-size:13px;margin-bottom:16px">点击遮罩或按 ESC 关闭。</p>
+    <div class="row" style="justify-content:flex-end;margin:0">
+      <button class="btn" onclick="document.getElementById('m').classList.add('hidden')">取消</button>
+      <button class="btn primary" onclick="document.getElementById('m').classList.add('hidden')">确定</button>
+    </div>
+  </div>
+</div>
+
+<h2>Toast</h2>
+<div class="row">
+  <button class="btn" onclick="showToast('操作成功')">显示提示</button>
+</div>
+<div class="toast hidden" id="t"></div>
+
+<script>
+function showToast(msg) {
+  var t = document.getElementById('t');
+  t.textContent = msg;
+  t.classList.remove('hidden');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function () { t.classList.add('hidden'); }, 2200);
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.getElementById('m').classList.add('hidden');
+});
+</script>
+</body>
+</html>

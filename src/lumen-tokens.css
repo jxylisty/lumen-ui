@@ -1,0 +1,217 @@
+/* ============================================================
+   Lumen UI — 双主题设计令牌
+   浅色工作台 / 深色琉璃，一套变量驱动全部组件。
+   改配色只改这里，组件样式里不写硬编码色值。
+   ============================================================ */
+
+:root {
+  /* 基础色（清爽现代浅色工作台） */
+  --bg: #f3f5fa;
+  --bg-sub: #e9edf5;          /* 次级背景：代码块 / 表头 / 条目底色 */
+  --card: rgba(255, 255, 255, 0.92);
+  --card-solid: #ffffff;
+  --sidebar-bg: rgba(255, 255, 255, 0.88);
+  --sidebar-border: rgba(15, 23, 42, 0.08);
+  --sidebar-shadow: 0 12px 32px rgba(15, 23, 42, 0.07), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --nav-hover-bg: rgba(79, 107, 246, 0.07);
+  --nav-active-bg: linear-gradient(90deg, rgba(79, 107, 246, 0.14) 0%, rgba(124, 92, 252, 0.06) 100%);
+  --nav-active-border: rgba(79, 107, 246, 0.26);
+  --nav-active-text: #3d5af0;
+  --border: #dfe4ee;
+  --border-strong: #c8d1e0;
+  --border-soft: rgba(15, 23, 42, 0.07);
+  --text: #0f172a;
+  --text-sub: #475569;
+  --muted: #64748b;
+
+  /* 强调色 */
+  --primary: #4f6bf6;
+  --primary-hover: #3d5af0;
+  --primary-soft: rgba(79, 107, 246, 0.11);
+  --primary-grad: linear-gradient(135deg, #4f6bf6 0%, #7c5cfc 100%);
+  --ok: #10b981;
+  --ok-soft: rgba(16, 185, 129, 0.12);
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.11);
+  --warn: #d97706;
+  --warn-soft: rgba(217, 119, 6, 0.12);
+  --purple: #8b5cf6;
+  --purple-soft: rgba(139, 92, 246, 0.12);
+
+  /* 强调色轮换（徽章 / 图表 / 标签共用，按需取用） */
+  --accent-1: #7c3aed;
+  --accent-2: #2563eb;
+  --accent-3: #0891b2;
+  --accent-4: #16a34a;
+  --accent-5: #ea580c;
+  --accent-6: #6366f1;
+  --accent-7: #0d9488;
+  --accent-8: #0284c7;
+  --accent-9: #475569;
+  --accent-10: #dc2626;
+  --accent-11: #db2777;
+  --accent-12: #65a30d;
+
+  /* 形状与阴影 */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 10px 26px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 20px 44px rgba(15, 23, 42, 0.14);
+
+  /* 图表专用（浅色模式清晰网格与标签） */
+  --chart-grid: rgba(15, 23, 42, 0.07);
+  --chart-track: rgba(15, 23, 42, 0.08);
+  --chart-label: #64748b;
+  --chart-a: #7c3aed;
+  --chart-b: #ec4899;
+  --chart-c: #06b6d4;
+  --chart-d: #a855f7;
+  --chart-e: #f43f5e;
+
+  /* 字体 */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Microsoft YaHei", monospace;
+
+  /* 沉浸模式扩展令牌 */
+  --vn-pink: #ff7597;
+  --vn-pink-soft: rgba(255, 117, 151, 0.16);
+  --vn-purple: #c084fc;
+  --vn-purple-soft: rgba(192, 132, 252, 0.16);
+  --vn-cyan: #38bdf8;
+  --vn-cyan-soft: rgba(56, 189, 248, 0.16);
+  --vn-mask-alpha: 0.72;
+  --vn-mask-blur: 5px;
+
+  color-scheme: light;
+}
+
+/* ---------- 暗色主题基础变量 ---------- */
+html[data-theme="dark"] {
+  --bg: #0b0f17;
+  --bg-sub: #151c2a;
+  --card: #121826;
+  --card-solid: #151c2c;
+  --sidebar-bg: rgba(17, 23, 38, 0.84);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --nav-hover-bg: rgba(255, 255, 255, 0.06);
+  --nav-active-bg: linear-gradient(90deg, rgba(109, 141, 249, 0.22) 0%, rgba(139, 110, 248, 0.08) 100%);
+  --nav-active-border: rgba(109, 141, 249, 0.35);
+  --nav-active-text: #ffffff;
+  --border: #232c3d;
+  --border-strong: #33415a;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --text: #e7ebf3;
+  --text-sub: #94a3b8;
+  --muted: #8b94a7;
+
+  --primary: #6d8df9;
+  --primary-hover: #84a0fb;
+  --primary-soft: rgba(109, 141, 249, .16);
+  --primary-grad: linear-gradient(135deg, #5b7cf7 0%, #8b6ef8 100%);
+  --ok: #34d399;
+  --ok-soft: rgba(52, 211, 153, .15);
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, .15);
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, .14);
+  --purple: #a78bfa;
+  --purple-soft: rgba(167, 139, 250, .16);
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, .3);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, .38);
+  --shadow-lg: 0 20px 44px rgba(0, 0, 0, .55);
+
+  --chart-grid: rgba(255, 255, 255, 0.05);
+  --chart-track: rgba(255, 255, 255, 0.07);
+  --chart-label: #94a3b8;
+
+  color-scheme: dark;
+}
+
+/* 沉浸模式覆盖（仅在暗色主题下启用深色琉璃与全景壁纸，浅色模式保持纯净明亮） */
+html[data-ui-style="immersive"][data-theme="dark"] {
+  --bg: transparent;
+  --bg-sub: rgba(22, 19, 42, 0.68);
+  --card: rgba(22, 19, 42, 0.76);
+  --card-solid: #18152e;
+  --sidebar-bg: rgba(18, 15, 36, 0.76);
+  --sidebar-border: rgba(255, 255, 255, 0.14);
+  --sidebar-shadow: 0 18px 44px rgba(0, 0, 0, 0.52), 0 0 24px rgba(255, 117, 151, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --nav-hover-bg: rgba(255, 255, 255, 0.07);
+  --nav-active-bg: linear-gradient(90deg, rgba(255, 117, 151, 0.24) 0%, rgba(192, 132, 252, 0.1) 100%);
+  --nav-active-border: rgba(255, 117, 151, 0.42);
+  --nav-active-text: #ffffff;
+  --border: rgba(255, 255, 255, 0.13);
+  --border-strong: rgba(255, 117, 151, 0.42);
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --text: #ffffff;
+  --text-sub: rgba(255, 255, 255, 0.86);
+  --muted: #cbd5e1;
+  --primary: #ff7597;
+  --primary-hover: #ff547d;
+  --primary-soft: rgba(255, 117, 151, 0.18);
+  --primary-grad: linear-gradient(135deg, #ff7597 0%, #c084fc 100%);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 18px 46px rgba(0, 0, 0, 0.6);
+  --chart-grid: rgba(255, 255, 255, 0.05);
+  --chart-track: rgba(255, 255, 255, 0.08);
+  --chart-label: rgba(255, 255, 255, 0.6);
+  color-scheme: dark;
+}
+
+/* 沉浸模式下半透明卡片文字微阴影，杜绝高亮壁纸下的文字对比度失衡 */
+html[data-ui-style="immersive"][data-theme="dark"] .panel,
+html[data-ui-style="immersive"][data-theme="dark"] .modal,
+html[data-ui-style="immersive"][data-theme="dark"] .card,
+html[data-ui-style="immersive"][data-theme="dark"] .topbar {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+/* 无 JS 时的系统主题兜底（theme.js 正常时不会触达） */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --bg: #0b0f17;
+    --bg-sub: #151c2a;
+    --card: #121826;
+    --card-solid: #151c2c;
+    --sidebar-bg: rgba(17, 23, 38, 0.84);
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    --nav-hover-bg: rgba(255, 255, 255, 0.06);
+    --nav-active-bg: linear-gradient(90deg, rgba(109, 141, 249, 0.22) 0%, rgba(139, 110, 248, 0.08) 100%);
+    --nav-active-border: rgba(109, 141, 249, 0.35);
+    --nav-active-text: #ffffff;
+    --border: #232c3d;
+    --border-strong: #33415a;
+    --border-soft: rgba(255, 255, 255, 0.08);
+    --text: #e7ebf3;
+    --text-sub: #94a3b8;
+    --muted: #8b94a7;
+
+    --primary: #6d8df9;
+    --primary-hover: #84a0fb;
+    --primary-soft: rgba(109, 141, 249, .16);
+    --primary-grad: linear-gradient(135deg, #5b7cf7 0%, #8b6ef8 100%);
+    --ok: #34d399;
+    --ok-soft: rgba(52, 211, 153, .15);
+    --danger: #f87171;
+    --danger-soft: rgba(248, 113, 113, .15);
+    --warn: #fbbf24;
+    --warn-soft: rgba(251, 191, 36, .14);
+    --purple: #a78bfa;
+    --purple-soft: rgba(167, 139, 250, .16);
+
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, .3);
+    --shadow-md: 0 10px 28px rgba(0, 0, 0, .38);
+    --shadow-lg: 0 20px 44px rgba(0, 0, 0, .55);
+
+    --chart-grid: rgba(255, 255, 255, 0.05);
+    --chart-track: rgba(255, 255, 255, 0.07);
+    --chart-label: #94a3b8;
+
+    color-scheme: dark;
+  }
+}
